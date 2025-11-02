@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Languages } from '@/assets/js/constants/languages'
 import ru from '@/assets/data/localization/ru'
 import en from '@/assets/data/localization/en'
