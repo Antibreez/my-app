@@ -1,0 +1,37 @@
+$base-width-desktop: 1920;
+$base-height-desktop: 1080;
+
+$base-width-mobile: 390;
+$base-height-mobile: 736;
+
+$base-px-desktop: 28;
+$base-px-mobile: 12;
+
+$font-size-desktop: (
+    560px: 12px,
+    1024px: 16px,
+    1920px: 28px 
+);
+
+$font-size-mobile: (
+    390px: 12px,
+    560px: 14px,
+    1024px: 26px 
+);
+
+$scale-duration: 800;
+$scale-timing-function: cubic-bezier(0.21, 0, 0.42, 1);
+
+// Colors
+// $color1: #293241;
+// $color2: #3d5a80;
+// $color3: #ee6c4d;
+// $color4: #98c1d9;
+
+$color1: #252422;
+// $color11: #21211f;
+$color2: #1e1e1c;
+// $color2: #003566;
+$color3: #ccc5b9;
+// $color31: #625e58;
+$color4: #98c1d9;

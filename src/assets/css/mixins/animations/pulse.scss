@@ -1,0 +1,22 @@
+@mixin pulse($direction: 'down', $shift: 1em) {
+    $transform: 'none';
+
+    @if ($direction == 'left') {
+        $transform: translateX($shift * -1);
+    } @else if ($direction == 'right') {
+        $transform: translateX($shift);
+    } @else if ($direction == 'top') {
+        $transform: translateY($shift)
+    } @else {
+        $transform: translateY($shift * -1);
+    }
+
+    #{0%} {
+        animation-timing-function: ease-in;
+    }
+
+    #{50%} {
+        animation-timing-function: ease-out;
+        transform: $transform;
+    }
+}

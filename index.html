@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <title>vite-project</title>
+  </head>
+  <body>
+    <style>
+      @keyframes wiggle-left {
+        0% {
+          animation-timing-function: ease-out;
+        }
+
+        50% {
+          transform: translateX(-5%);
+          animation-timing-function: ease-in;
+        }
+      }
+
+      @keyframes wiggle-right {
+        0% {
+          animation-timing-function: ease-out;
+        }
+
+        50% {
+          transform: translateX(5%);
+          animation-timing-function: ease-in;
+        }
+      }
+
+      #start-spinner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        background: #1e1e1c;
+      }
+      
+      .start-spinner__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: min(20vh, 20vw);
+        aspect-ratio: 1 / 47;
+        transform: translate(-50%, -50%);
+      }
+
+      .start-spinner__item {
+        position: absolute;
+        inset: 0;
+        transition: transform 1s ease 0.5s;
+      }
+
+      .start-spinner__item::before,
+      .start-spinner__item::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%) skewX(-19.28deg);
+        height: 100%;
+        background: #ccc5b9;
+        z-index: 5;
+        width: 450%;
+        transform-origin: 50% 50%;
+      }
+
+      .start-spinner__item::after {
+        height: 101vh;
+        transform: translate(0, -50%) skewX(-19.28deg) scaleY(0);
+        transition: transform 0.5s ease;
+      }
+
+      .start-spinner__item:first-child::before,
+      .start-spinner__item:first-child::after {
+        right: 0%;
+      }
+
+      .start-spinner__item:nth-child(2)::before,
+      .start-spinner__item:nth-child(2)::after {
+        left: 0%;
+      }
+
+      .start-spinner__item-bg {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        width: 70vw;
+        height: 105vh;
+        background: #1e1e1c;
+        transform: translate(0, -50%) skewX(-19.28deg);
+      }
+
+      .start-spinner__item:nth-child(2) .start-spinner__item-bg {
+        left: 50%;
+      }
+
+      .start-spinner__content svg {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        aspect-ratio: 29 / 23;
+      }
+
+      .start-spinner__item:first-child svg {
+        right: -800%;
+        animation: wiggle-left 0.8s linear infinite;
+      }
+
+      .start-spinner__item:nth-child(2) svg {
+        left: -800%;
+        animation: wiggle-right 0.8s linear infinite;
+      }
+
+      #start-spinner.loaded {
+        pointer-events: none;
+        background: none;
+      }
+
+      #start-spinner.loaded .start-spinner__item:first-child {
+        transform: translateX(-100vw);
+      }
+
+      #start-spinner.loaded .start-spinner__item:nth-child(2) {
+        transform: translateX(100vw);
+      }
+
+      #start-spinner.loaded .start-spinner__item:after {
+        transform: translate(0, -50%) skewX(-19.28deg) scaleY(1);
+      }
+    </style>
+    <div id="app"></div>
+    <div id="start-spinner">
+      <div class="start-spinner__content">
+        <div class="start-spinner__item start-spinner__item--left">
+          <div class="start-spinner__item-bg"></div>
+          <svg class="icon icon--left" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.68 8.316L3.36 12.516V11.144L15.68 15.316V19.684L0 14.112V9.548L15.68 3.948V8.316Z" fill="#ccc5b9"/>
+            <path d="M26.4913 0H28.6193L20.7793 22.512H18.6513L26.4913 0Z" fill="none"/>
+          </svg>
+        </div>
+        <div class="start-spinner__item start-spinner__item--right">
+          <div class="start-spinner__item-bg"></div>
+          <svg class="icon icon--right" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.84 0H9.968L2.128 22.512H0L7.84 0Z" fill="none"/>
+            <path d="M12.9076 8.316V3.948L28.5876 9.548V14.112L12.9076 19.684V15.316L25.2276 11.144V12.516L12.9076 8.316Z" fill="#ccc5b9"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

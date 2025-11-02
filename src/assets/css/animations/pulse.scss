@@ -1,0 +1,5 @@
+@use "../mixins/animations/pulse" as *;
+
+@keyframes pulse-bottom-1 {
+    @include pulse($shift: 0.5em);
+}

@@ -1,0 +1,9 @@
+@use "../vars-scss" as *;
+@use "../base.scss" as *;
+
+.container {
+    width: 100%;
+    max-width: #{$base-width-desktop}px;
+    margin: 0 auto;
+    padding: 0 px-to-rem(50);
+}

@@ -1,0 +1,9 @@
+@use "./px-to-vh.scss" as *;
+@use "./px-to-vw.scss" as *;
+
+@function vw-vh-contain($px, $mobile: false) {
+    $vw: px-to-vw($px, $mobile);
+    $vh: px-to-vh($px, $mobile);
+
+    @return Min($vw, $vh);
+}

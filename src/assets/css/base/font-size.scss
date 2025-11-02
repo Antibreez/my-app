@@ -1,0 +1,10 @@
+@use './poly-fluid-sizing/poly-fluid-sizing' as *;
+@use '../vars-scss.scss' as *;
+
+@mixin font-size {
+    @include poly-fluid-sizing('font-size', $font-size-desktop);
+
+    @media (--viewport-portrait-layout) {
+        @include poly-fluid-sizing('font-size', $font-size-mobile);
+    }
+}

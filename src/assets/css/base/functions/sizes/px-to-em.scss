@@ -1,0 +1,5 @@
+@use "sass:math";
+
+@function px-to-em($px, $inherited-px) {
+    @return 1em * math.div($px, $inherited-px);
+}

@@ -1,0 +1,43 @@
+@use './base/font-size' as *;
+@use './vars-scss.scss' as *;
+
+html,
+body {
+    text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: $color3;
+    background: $color1;
+    scroll-behavior: smooth;
+
+    & * {
+        box-sizing: border-box;
+    }
+
+    @include font-size;
+}
+
+button {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+h1,
+p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
