@@ -64,22 +64,24 @@ onMounted(() => {
 
     &__decor {
         position: absolute;
-        bottom: 50%;
+        bottom: 40%;
         left: px-to-vw(20);
         display: flex;
+        align-items: center;
+        width: max-content;
+        aspect-ratio: 1 / 1;
         font-size: px-to-rem(150);
         color: $color2;
-        transform-origin: 50% 50%;
-        transform: translate(-0.5em, 50%) rotate(-90deg);
-
+        transform: translate(-0.5em, 50%);
         
         &::before {
             content: 'Hello';
             transition: opacity 1s ease 0.4s, transform 1s cubic-bezier(.16,.33,.42,.99) 0.4s;
+            transform-origin: 50% 50%;
             text-transform: uppercase;
+            transform: translate(-0.5em) rotate(-90deg);
         }
     }
-
 
     &__content {
         position: relative;
@@ -108,7 +110,11 @@ onMounted(() => {
         &__decor {
             &::before {
                 opacity: 0;
-                transform: translateX(-20%);
+                transform: translateX(-20%) rotate(-90deg);
+
+                @media (--viewport-portrait-layout) {
+                    transform: translateX(-60%) rotate(-90deg);
+                }
             }
         }
 
@@ -133,7 +139,11 @@ onMounted(() => {
 
             left: px-to-vw(50);
             font-size: px-to-vw(58, true);
-            transform: translate(-45%, 50%) rotate(-90deg);
+            transform: translate(0, 40%);
+
+            &::before {
+                transform: translateX(-40%) rotate(-90deg);
+            }
         }
     }
 }

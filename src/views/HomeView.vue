@@ -34,7 +34,7 @@ onMounted(async () => {
 
     let smother = ScrollSmoother.create({
         smooth: isTouch() ? 0 : 1,
-        speed: 0.6,
+        speed: isTouch() ? 0.4 : 0.6,
         effects: true,
         normalizeScroll: true
     })
