@@ -26,7 +26,7 @@ watch(isLoading, async (to, from) => {
 
   if (!preloader) return
 
-  await waitForTimeOutPromise(1000);
+  await waitForTimeOutPromise(1000)
 
   preloader.classList.add('loaded')
 

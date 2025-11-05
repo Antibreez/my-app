@@ -64,13 +64,14 @@ onMounted(() => {
 
     &__decor {
         position: absolute;
-        bottom: 125%;
+        bottom: 50%;
         left: px-to-vw(20);
         display: flex;
         font-size: px-to-rem(150);
         color: $color2;
-        transform-origin: 100% 100%;
-        transform: translateX(-55%) rotate(-90deg);
+        transform-origin: 50% 50%;
+        transform: translate(-0.5em, 50%) rotate(-90deg);
+
         
         &::before {
             content: 'Hello';
@@ -122,13 +123,17 @@ onMounted(() => {
         padding-bottom: px-to-rem(20, true);
 
         &__content {
-            padding-left: px-to-rem(60, true);
+            padding-left: px-to-vw(60, true);
             padding-right: 0;
         }
 
         &__decor {
-            left: -18%;
-            bottom: 90%;
+            // left: -18%;
+            // bottom: 90%;
+
+            left: px-to-vw(50);
+            font-size: px-to-vw(58, true);
+            transform: translate(-50%, 50%) rotate(-90deg);
         }
     }
 }

@@ -33,7 +33,7 @@ onMounted(async () => {
     gsap.registerPlugin(ScrollSmoother, ScrollTrigger, ScrollToPlugin)
 
     let smother = ScrollSmoother.create({
-        smooth: 1,
+        smooth: isTouch() ? 0 : 1,
         speed: 0.6,
         effects: true,
         normalizeScroll: true
