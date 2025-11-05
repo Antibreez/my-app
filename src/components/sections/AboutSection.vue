@@ -133,7 +133,7 @@ onMounted(() => {
 
             left: px-to-vw(50);
             font-size: px-to-vw(58, true);
-            transform: translate(-50%, 50%) rotate(-90deg);
+            transform: translate(-45%, 50%) rotate(-90deg);
         }
     }
 }
